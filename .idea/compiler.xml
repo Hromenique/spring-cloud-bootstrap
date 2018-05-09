@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="clients" />
+        <module name="config" />
+        <module name="discovery" />
+        <module name="gateway" />
+        <module name="svc-book" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="clients" target="1.8" />
+      <module name="config" target="1.8" />
+      <module name="discovery" target="1.8" />
+      <module name="gateway" target="1.8" />
+      <module name="spring-cloud-bootstrap" target="1.5" />
+      <module name="svc-book" target="1.8" />
+      <module name="svc-rating" target="1.8" />
+      <module name="zipkin" target="1.6" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

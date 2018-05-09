@@ -1,0 +1,66 @@
+version: "3"
+
+services:
+  config:
+    build:
+      dockerfile: ./config/Dockerfile
+      context: .
+      container_name: config
+      ports:
+        - "8081:8081"
+      networks:
+        - "local-tests"
+
+    discovery:
+      dockerfile: ./discovery/Dockerfile
+      context: .
+      container_name: discovery
+      ports:
+        - "8082:8082"
+      networks:
+        - "local-tests"
+      depends_on:
+        - "config"
+
+    book1:
+      dockerfile: ./svc-book/Dockerfile
+      context: .
+      container_name: book1
+      ports:
+        - "8083:8083"
+      networks:
+        - "local-tests"
+      depends_on:
+        - "config"
+        - "discovery"
+
+    book1:
+      dockerfile: ./svc-book/Dockerfile
+      context: .
+      container_name: book1
+      ports:
+        - "8084:8083"
+      networks:
+        - "local-tests"
+      depends_on:
+        - "config"
+        - "discovery"
+
+    clients:
+      dockerfile: ./clients/Dockerfile
+      context: .
+      container_name: clients
+      ports:
+      - "9000:9000"
+      networks:
+      - "local-tests"
+      depends_on:
+      - "config"
+      - "discovery"
+      - "book1"
+      - "book2"
+
+networks:
+  local-tests:
+    driver: bridge
+
