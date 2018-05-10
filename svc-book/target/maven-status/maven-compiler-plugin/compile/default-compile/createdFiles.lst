@@ -1,0 +1,7 @@
+com/baeldung/spring/cloud/bootstrap/svcbook/book/BookService.class
+com/baeldung/spring/cloud/bootstrap/svcbook/book/BookNotFoundException.class
+com/baeldung/spring/cloud/bootstrap/svcbook/DataLoader.class
+com/baeldung/spring/cloud/bootstrap/svcbook/book/BookRepository.class
+com/baeldung/spring/cloud/bootstrap/svcbook/book/BookController.class
+com/baeldung/spring/cloud/bootstrap/svcbook/book/Book.class
+com/baeldung/spring/cloud/bootstrap/svcbook/BookServiceApplication.class

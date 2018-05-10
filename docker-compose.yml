@@ -1,60 +1,51 @@
 version: "3"
 
 services:
+
   config:
     build:
-      dockerfile: ./config/Dockerfile
-      context: .
-      container_name: config
-      ports:
-        - "8081:8081"
-      networks:
-        - "local-tests"
-
-    discovery:
-      dockerfile: ./discovery/Dockerfile
-      context: .
-      container_name: discovery
-      ports:
-        - "8082:8082"
-      networks:
-        - "local-tests"
-      depends_on:
-        - "config"
-
-    book1:
-      dockerfile: ./svc-book/Dockerfile
-      context: .
-      container_name: book1
-      ports:
-        - "8083:8083"
-      networks:
-        - "local-tests"
-      depends_on:
-        - "config"
-        - "discovery"
-
-    book1:
-      dockerfile: ./svc-book/Dockerfile
-      context: .
-      container_name: book1
-      ports:
-        - "8084:8083"
-      networks:
-        - "local-tests"
-      depends_on:
-        - "config"
-        - "discovery"
-
-    clients:
-      dockerfile: ./clients/Dockerfile
-      context: .
-      container_name: clients
-      ports:
-      - "9000:9000"
-      networks:
+      dockerfile: Dockerfile
+      context: ./config
+    image: test/config-server
+    container_name: config
+    ports:
+      - "8081"
+    networks:
       - "local-tests"
-      depends_on:
+
+  discovery:
+    build:
+      dockerfile: Dockerfile
+      context: ./discovery/
+    image: test/registry-server
+    container_name: discovery
+    ports:
+      - "8082"
+    networks:
+      - "local-tests":
+      dockerfile: Dockerfile
+      context: ./svc-book/
+    image: test/book-api
+    container_name: book2
+    ports:
+      - "8083"
+    networks:
+      - "local-tests"
+    depends_on:
+      - "config"
+      - "discovery"
+
+  clients:
+    build:
+      dockerfile: Dockerfile
+      context: ./clients/
+    image: test/book-clients-api
+    container_name: clients
+    ports:
+      - "9000"
+    networks:
+      - "local-tests"
+    depends_on:
       - "config"
       - "discovery"
       - "book1"
@@ -62,5 +53,5 @@ services:
 
 networks:
   local-tests:
-    driver: bridge
+    driver: bridge  
 

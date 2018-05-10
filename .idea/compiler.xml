@@ -15,6 +15,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="clients" target="1.8" />
+      <module name="clients2" target="1.8" />
       <module name="config" target="1.8" />
       <module name="discovery" target="1.8" />
       <module name="gateway" target="1.8" />

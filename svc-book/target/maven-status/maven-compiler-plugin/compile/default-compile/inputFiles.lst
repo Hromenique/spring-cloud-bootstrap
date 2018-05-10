@@ -1,0 +1,7 @@
+/home/hromenique/sources/spring-cloud-bootstrap/svc-book/src/main/java/com/baeldung/spring/cloud/bootstrap/svcbook/book/BookRepository.java
+/home/hromenique/sources/spring-cloud-bootstrap/svc-book/src/main/java/com/baeldung/spring/cloud/bootstrap/svcbook/book/BookService.java
+/home/hromenique/sources/spring-cloud-bootstrap/svc-book/src/main/java/com/baeldung/spring/cloud/bootstrap/svcbook/book/BookController.java
+/home/hromenique/sources/spring-cloud-bootstrap/svc-book/src/main/java/com/baeldung/spring/cloud/bootstrap/svcbook/DataLoader.java
+/home/hromenique/sources/spring-cloud-bootstrap/svc-book/src/main/java/com/baeldung/spring/cloud/bootstrap/svcbook/book/Book.java
+/home/hromenique/sources/spring-cloud-bootstrap/svc-book/src/main/java/com/baeldung/spring/cloud/bootstrap/svcbook/BookServiceApplication.java
+/home/hromenique/sources/spring-cloud-bootstrap/svc-book/src/main/java/com/baeldung/spring/cloud/bootstrap/svcbook/book/BookNotFoundException.java

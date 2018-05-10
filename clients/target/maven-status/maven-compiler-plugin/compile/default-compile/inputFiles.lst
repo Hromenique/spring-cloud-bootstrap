@@ -1,0 +1,6 @@
+/home/hromenique/sources/spring-cloud-bootstrap/clients/src/main/java/br/com/hrom/clients/book/BookClient.java
+/home/hromenique/sources/spring-cloud-bootstrap/clients/src/main/java/br/com/hrom/clients/book/Book.java
+/home/hromenique/sources/spring-cloud-bootstrap/clients/src/main/java/br/com/hrom/clients/book/FeignClientController.java
+/home/hromenique/sources/spring-cloud-bootstrap/clients/src/main/java/br/com/hrom/clients/book/Config.java
+/home/hromenique/sources/spring-cloud-bootstrap/clients/src/main/java/br/com/hrom/clients/book/RestTemplateController.java
+/home/hromenique/sources/spring-cloud-bootstrap/clients/src/main/java/br/com/hrom/clients/ClientsApplication.java
