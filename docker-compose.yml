@@ -9,47 +9,80 @@ services:
     image: test/config-server
     container_name: config
     ports:
-      - "8081"
+      - "8081:8080"
     networks:
       - "local-tests"
 
   discovery:
     build:
       dockerfile: Dockerfile
-      context: ./discovery/
+      context: ./discovery
     image: test/registry-server
     container_name: discovery
     ports:
-      - "8082"
+      - "8082:8080"
     networks:
-      - "local-tests":
+      - "local-tests"
+
+  svc-book-1:
+    build:
       dockerfile: Dockerfile
-      context: ./svc-book/
-    image: test/book-api
-    container_name: book2
+      context: ./svc-book
+    image: test/svc-book
+    container_name: svc-book-1
     ports:
-      - "8083"
+      - "8083:8080"
     networks:
       - "local-tests"
     depends_on:
       - "config"
       - "discovery"
 
-  clients:
+  svc-book-2:
     build:
       dockerfile: Dockerfile
-      context: ./clients/
-    image: test/book-clients-api
-    container_name: clients
+      context: ./svc-book
+    image: test/svc-book
+    container_name: svc-book-2
     ports:
-      - "9000"
+      - "8084:8080"
     networks:
       - "local-tests"
     depends_on:
       - "config"
       - "discovery"
-      - "book1"
-      - "book2"
+
+  clients-1:
+    build:
+      dockerfile: Dockerfile
+      context: ./clients/
+    image: test/book-clients-api
+    container_name: clients-1
+    ports:
+      - "9000:8080"
+    networks:
+      - "local-tests"
+    depends_on:
+      - "config"
+      - "discovery"
+      - "svc-book-1"
+      - "svc-book-2"
+
+#  clients-2:
+#    build:
+#      dockerfile: Dockerfile
+#      context: ./clients/
+#    image: test/book-clients-api
+#    container_name: clients-2
+#    ports:
+#      - "9001:8080"
+#    networks:
+#      - "local-tests"
+#    depends_on:
+#      - "config"
+#      - "discovery"
+#      - "svc-book-1"
+#      - "svc-book-2"
 
 networks:
   local-tests:

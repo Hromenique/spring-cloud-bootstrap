@@ -1,5 +1,5 @@
 FROM openjdk:8
 COPY target/config*.jar /var/www/app.jar
-EXPOSE 8081:8081
+EXPOSE 8080
 WORKDIR /var/www
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar", "--spring.profiles.active=docker"]

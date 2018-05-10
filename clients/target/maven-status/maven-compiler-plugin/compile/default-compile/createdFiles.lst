@@ -1,7 +1,7 @@
-br/com/hrom/clients/book/RestTemplateController$1.class
-br/com/hrom/clients/book/FeignClientController.class
-br/com/hrom/clients/ClientsApplication.class
-br/com/hrom/clients/book/RestTemplateController.class
-br/com/hrom/clients/book/BookClient.class
-br/com/hrom/clients/book/Config.class
-br/com/hrom/clients/book/Book.class
+br\com\hrom\clients\book\BookClient.class
+br\com\hrom\clients\book\RestTemplateController.class
+br\com\hrom\clients\book\FeignClientController.class
+br\com\hrom\clients\ClientsApplication.class
+br\com\hrom\clients\book\Book.class
+br\com\hrom\clients\book\RestTemplateController$1.class
+br\com\hrom\clients\book\Config.class
